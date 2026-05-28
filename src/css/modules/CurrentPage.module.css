@@ -1,0 +1,14 @@
+.title {
+    padding-bottom: 30px;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+
+.input {
+    border-radius: 0px;
+    border: 1px solid black;
+}

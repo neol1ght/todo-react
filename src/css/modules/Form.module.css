@@ -1,0 +1,246 @@
+:root {
+    --font: 16px;
+}
+
+.form {
+    position: relative;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+.input {
+    padding: 10px;
+    border: 1px solid darkgray;
+    font-size: var(--font);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+.search_task {
+    width: 100%;
+    padding: 0 45px;
+}
+
+.input_search {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid darkgray;
+    font-size: var(--font);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+.input_search::placeholder {
+    opacity: 0.6;
+}
+.input::placeholder {
+    opacity: 0.6;
+}
+.input:hover {
+    border: 1px solid black;
+    background-color: #dedede;
+}
+.input:focus {
+    outline: none;
+    border: 1px solid black;
+    background-color: #dedede;
+
+}
+
+.add {
+    position: absolute;
+    left: 62%;
+    top: -20%;
+    font-size: 30px;
+    color: darkgreen;
+}
+.check {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 25px;
+    height: 22px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: 0.3s all ease;
+}
+
+.check:checked {
+    background-color: black;
+}
+.check:checked::after {
+    content: '✓';
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    height: 100%;
+}
+.button {
+    border: 2px solid black;
+    border-radius: 5px;
+    background: transparent;
+    color: black;
+    font-size: var(--font);
+    padding: 0 10px;
+    transition: 0.3s all ease;
+}
+.button:hover {
+    color: white;
+    background: black;
+}
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+li {
+    list-style: none;
+}
+.element {
+    min-width: 400px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 10px;
+    border: 1px solid darkgray;
+    border-radius: 10px;
+}
+
+
+.delete {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-size: 14px;
+    color: black;
+    transition: 0.3s all ease;
+}
+.delete:hover {
+    color: white;
+    background-color: black;
+}
+
+
+
+.allDelete {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    display: inline;
+    color: black;
+    font-size: var(--font);
+    background-color: transparent;
+}
+
+.states {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 80%;
+    gap: 15px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid darkgray;
+}
+
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px 0;
+    width: 100%;
+    transition: 0.3s all ease;
+}
+
+.taskText {
+    flex: 1;
+    margin: 0;
+    text-align: left;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    max-width: 60%;
+    min-width: 0;
+}
+
+.delete {
+    flex-shrink: 0;
+    margin-left: 15px;
+}
+.blocked {
+    opacity: 0.5;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Текст задачи */
+.blocked .taskText {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.blocked .delete {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.check:checked {
+    opacity: 0.7;
+}
+
+.check:checked + .content .taskText {
+    transition: all 0.3s ease;
+}
+
+.blocked .taskText {
+    position: relative;
+    color: #666;
+}
+
+.blocked .taskText::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background-color: #999;
+    transform: scaleX(1);
+    animation: strike 0.3s ease;
+}
+
+@keyframes strike {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+.filter {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    width: 80%;
+    gap: 15px;
+}
+.filter button {
+    display: inline-block;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.emptyTasks {
+    padding: 40px 0px;
+    text-align: center;
+}

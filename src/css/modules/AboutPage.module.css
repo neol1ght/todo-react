@@ -1,0 +1,17 @@
+.textblock {
+    border-top: 2px solid darkgray;
+    padding: 20px 10px;
+    font-size: 28px;
+    width: 100%;
+}
+.textblock span {
+    font-size: 24px;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.5);
+}
+.text {
+    display: flex;
+    padding: 10px 0;
+    justify-content: space-between;
+    align-items: center;
+}
